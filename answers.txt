@@ -1,0 +1,19 @@
+1. Is there a fault in the program? If so, locate it and explain.
+
+Yes the issue is that the loop starts at i= 1 rather than at i=0. This will cause the program to skip the first index of the records list.
+
+2. Define a test case that does not execute the fault. Start from this question, if it is possible, you should give the test case (the attendance record with 10 values), the expected output and the actual output. If impossible, explains the reason. Besides, you should implement the complete program, including the functions under test, and verify your inputs along with their corresponding outputs.
+
+There is not input in which the fault will not exist it is a problem caused by the i=0 of the code which is an error made by the program. 
+
+3. Define a test case that executes the fault but does not result in an error state.
+
+perfect attendance {1,1,1,1,1,1,1,1,1,1} (Test 1 in my program) or states where a one is contained in index zero and example would be: {1,0,0,0,0,0,0,0,0,0} (Test 2 in my program) this will not result in an error state because the count internally and the final result will be there true values.
+
+4. Define a test case that results in an error state but not a failure.
+
+An example of this could be {0,0,1,1,1,1,1,1,1,1} (Test 3 in my program) or any other time that >3 absences appear but one is at index 0. In this example it would be an error state because internally in the program it would have absense_count at 1 where it should be 2 but this is not a failure because it will still record true which is the correct output. 
+
+5. Define a test case that results in failure.
+
+A result that would end in failure would be {0,0,0,1,1,1,1,1,1,1} (Test 4 in my program) or any other combination of exactly 3 absences but one but be at index 0. This is because in the loop and absence or zero would only appear once. This is a failure because it should report false but instead reports true because the error at index 0 was not counted. 
